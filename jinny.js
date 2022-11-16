@@ -57,3 +57,13 @@ function getLocalStream() {
 }
 
 getLocalStream();
+
+
+function changeRex() {
+  window.location.href = '/';
+}
+
+function changeDongDong() {
+  window.location.href = '/#dongdong';
+  window.location.reload();
+}
