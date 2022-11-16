@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+var trex = null;
+var instance = null;
+
 (function () {
     'use strict';
     /**
@@ -17,6 +20,7 @@
             return Runner.instance_;
         }
         Runner.instance_ = this;
+        instance = this;
 
         this.outerContainerEl = document.querySelector(outerContainerId);
         this.containerEl = null;
@@ -380,6 +384,7 @@
 
             // Draw t-rex
             this.tRex = new Trex(this.canvas, this.spriteDef.TREX);
+            trex = this.tRex;
 
             this.outerContainerEl.appendChild(this.containerEl);
 
@@ -1824,6 +1829,8 @@
             }
 
             this.jumpVelocity += this.config.GRAVITY * framesElapsed;
+            console.log('this.jumpVelocity');
+            console.log(this.jumpVelocity);
 
             // Minimum height has been reached.
             if (this.yPos < this.minJumpHeight || this.speedDrop) {
