@@ -67,3 +67,37 @@ function changeDongDong() {
   window.location.href = '/#dongdong';
   window.location.reload();
 }
+
+var timer;
+function sayGo() {
+  const hash = window.location.hash;
+  var say = document.querySelector('.say');
+
+  var sayList = [];
+
+  switch (hash) {
+    case '#dongdong':
+      sayList = [
+        '안녕하세요!!!!',
+        '이동근입니다', 
+        '나는 시소의 시티오입니다',
+        '동근이에 여행 >_<',
+        '찡긋',
+        '찡긋 >_<',
+      ]
+      break;
+    default:
+      break;
+  }
+
+  var cnt = 0;
+  timer = setInterval(() => {
+    const text = sayList[cnt++];
+    console.log(text);
+    say.textContent = text;
+
+    if (sayList.length < cnt) {
+      cnt = 0;
+    }
+  }, 3000);
+}
