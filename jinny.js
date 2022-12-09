@@ -68,6 +68,11 @@ function changeDongDong() {
   window.location.reload();
 }
 
+function changeGhost() {
+  window.location.href = '/#ghost';
+  window.location.reload();
+}
+
 var timer;
 function sayGo() {
   const hash = window.location.hash;
@@ -86,7 +91,21 @@ function sayGo() {
         '찡긋 >_<',
       ]
       break;
+    case '#ghost':
+      sayList = [
+        '안녕하세요!!!!',
+        '시소 알유오케이에 오신걸 환영합니다', 
+        '찡긋',
+        '찡긋 >_<',
+      ]
+      break;
     default:
+      sayList = [
+        'Hi, I\'m v-rex',
+        'Try to make any sounds!', 
+        'The v-rex will be moved as noise you make',
+        'Have a fun time with v-rex-runner!',
+      ]
       break;
   }
 
